@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sneha Sirigiripeta — Portfolio</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0a192f;--navy2:#112240;--accent:#64ffda;--accent2:#00b4d8;
+  --white:#e6f1ff;--gray:#8892b0;--light:#ccd6f6;--card:#112240;
+  --font:'Sora',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--navy);color:var(--white);overflow-x:hidden;}
+::selection{background:var(--accent);color:var(--navy);}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--navy);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
+
+/* ─── NAVBAR ─── */
+#mainNav{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:rgba(10,25,47,0.95);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(100,255,218,0.12);
+  transition:box-shadow .3s;
+}
+#mainNav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.5);}
+.nav-brand{font-size:1.3rem;font-weight:800;color:var(--accent)!important;text-decoration:none;letter-spacing:-.02em;}
+.nav-brand span{color:var(--white);}
+.navbar-toggler{border:1.5px solid var(--accent)!important;padding:.3rem .55rem;}
+.navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2364ffda' stroke-width='2.2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;}
+.navlink{
+  font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--light)!important;padding:.55rem 1rem!important;
+  position:relative;text-decoration:none;transition:color .2s;
+}
+.navlink::after{content:'';position:absolute;bottom:0;left:1rem;right:1rem;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s;}
+.navlink:hover{color:var(--accent)!important;}
+.navlink:hover::after,.navlink.active::after{transform:scaleX(1);}
+.navlink.active{color:var(--accent)!important;}
+.dd-menu{background:#0d2137;border:1px solid rgba(100,255,218,.2);border-radius:8px;min-width:165px;padding:.4rem 0;}
+.dd-item{display:block;font-size:.8rem;font-weight:600;color:var(--light);padding:.6rem 1.2rem;text-decoration:none;transition:background .15s,color .15s;}
+.dd-item:hover{background:rgba(100,255,218,.08);color:var(--accent);}
+
+/* ─── SECTIONS ─── */
+section{padding:110px 0 80px;min-height:100vh;display:flex;align-items:center;}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;}
+.sh{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--white);line-height:1.1;}
+.sh span{color:var(--accent);}
+.rule{width:48px;height:3px;background:var(--accent);border-radius:2px;margin:1rem 0 2rem;}
+.sub{color:var(--gray);font-size:.95rem;line-height:1.85;max-width:580px;margin-bottom:2rem;}
+
+/* ─── HERO ─── */
+#home{background:var(--navy);padding-top:90px;position:relative;overflow:hidden;}
+#home::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 75% 45%,rgba(100,255,218,.06) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(0,180,216,.05) 0%,transparent 60%);pointer-events:none;}
+.hero-tag{font-size:.78rem;font-weight:700;letter-spacing:.16em;color:var(--accent);margin-bottom:1rem;}
+.hero-h1{font-size:clamp(2.4rem,6vw,4.8rem);font-weight:800;line-height:1.05;color:var(--white);margin-bottom:.3rem;}
+.hero-h1 .ac{color:var(--accent);}
+.hero-role{font-size:clamp(1.1rem,2.5vw,1.8rem);font-weight:600;color:var(--gray);margin-bottom:1.2rem;}
+.hero-desc{color:var(--gray);font-size:.97rem;line-height:1.85;max-width:470px;margin-bottom:2rem;}
+.btn-a{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);border:none;color:var(--navy);font-family:var(--font);font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.75rem 1.8rem;border-radius:5px;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.btn-a:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(100,255,218,.25);color:var(--navy);}
+.btn-b{display:inline-flex;align-items:center;gap:.5rem;background:transparent;border:1.5px solid var(--accent);color:var(--accent);font-family:var(--font);font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.73rem 1.8rem;border-radius:5px;cursor:pointer;text-decoration:none;transition:background .2s,transform .2s;}
+.btn-b:hover{background:rgba(100,255,218,.08);transform:translateY(-2px);color:var(--accent);}
+.stat-box{display:flex;flex-direction:column;align-items:center;background:var(--card);border:1px solid rgba(100,255,218,.12);border-radius:8px;padding:1.1rem 1.5rem;}
+.stat-n{font-size:1.9rem;font-weight:800;color:var(--accent);line-height:1;}
+.stat-l{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--gray);text-transform:uppercase;margin-top:.3rem;}
+.av-img{width:280px;height:340px;object-fit:cover;border-radius:8px;border:2px solid var(--accent);box-shadow:14px 14px 0 rgba(100,255,218,.12);position:relative;z-index:1;}
+.av-wrap{position:relative;display:inline-block;}
+.av-sh{position:absolute;top:16px;left:16px;width:280px;height:340px;border:2px solid rgba(100,255,218,.22);border-radius:8px;z-index:0;}
+.hl-box{background:var(--card);border:1px solid rgba(100,255,218,.14);border-radius:10px;padding:1.8rem 2rem;margin-top:2.5rem;}
+.hl-icon{width:44px;height:44px;border-radius:50%;background:rgba(100,255,218,.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.2rem;margin-bottom:.9rem;}
+.hl-title{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.35rem;}
+.hl-text{font-size:.85rem;color:var(--gray);line-height:1.7;}
+.alert-c{display:flex;align-items:center;gap:.9rem;padding:1rem 1.3rem;background:rgba(100,255,218,.06);border:1px solid rgba(100,255,218,.18);border-radius:8px;margin-top:2.5rem;}
+.alert-c a{color:var(--accent);font-weight:700;}
+
+/* ─── ABOUT ─── */
+#about{background:var(--navy2);}
+.prof-img{width:100%;max-width:310px;height:350px;object-fit:cover;border-radius:10px;border:2px solid rgba(100,255,218,.25);box-shadow:0 20px 55px rgba(0,0,0,.4);}
+.ab-card{background:var(--navy);border:1px solid rgba(100,255,218,.1);border-radius:10px;padding:1.8rem;margin-bottom:1.2rem;}
+.ir{display:flex;align-items:center;gap:.7rem;color:var(--light);font-size:.88rem;margin-bottom:.8rem;}
+.ir i{color:var(--accent);width:16px;font-size:.95rem;}
+.chip{display:inline-block;background:rgba(100,255,218,.08);border:1px solid rgba(100,255,218,.2);color:var(--accent);border-radius:50px;padding:.26rem .8rem;font-size:.76rem;font-weight:700;margin:.2rem;letter-spacing:.04em;}
+.acc-item-c{background:var(--navy);border:1px solid rgba(100,255,218,.1)!important;border-radius:8px!important;margin-bottom:.6rem;overflow:hidden;}
+.acc-btn-c{background:transparent!important;color:var(--white)!important;font-family:var(--font);font-weight:600;font-size:.88rem;box-shadow:none!important;padding:.95rem 1.1rem;}
+.acc-btn-c:not(.collapsed){color:var(--accent)!important;}
+.acc-btn-c::after{filter:invert(1) sepia(1) saturate(4) hue-rotate(120deg);}
+.acc-body-c{color:var(--gray);font-size:.86rem;line-height:1.75;padding:0 1.1rem 1.1rem;}
+
+/* ─── QUALIFICATIONS ─── */
+#qualifications{background:var(--navy);}
+.qt{border-radius:10px;overflow:hidden;border:1px solid rgba(100,255,218,.1);}
+.qt thead{background:rgba(100,255,218,.08);border-bottom:2px solid rgba(100,255,218,.3);}
+.qt thead th{font-family:var(--font);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:none;padding:.9rem 1rem;}
+.qt tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background .15s;}
+.qt tbody tr:hover{background:rgba(100,255,218,.04);}
+.qt tbody td{font-family:var(--font);font-size:.86rem;color:var(--light);border:none;padding:.82rem 1rem;vertical-align:middle;}
+.ba{background:rgba(100,255,218,.1)!important;color:var(--accent)!important;border:1px solid rgba(100,255,218,.25);font-family:var(--font);font-weight:700;font-size:.7rem;padding:.28rem .65rem;border-radius:4px;letter-spacing:.06em;}
+.bs{background:rgba(52,211,153,.1)!important;color:#34d399!important;border:1px solid rgba(52,211,153,.25);font-family:var(--font);font-weight:700;font-size:.7rem;padding:.28rem .65rem;border-radius:4px;}
+.bw{background:rgba(251,191,36,.1)!important;color:#fbbf24!important;border:1px solid rgba(251,191,36,.25);font-family:var(--font);font-weight:700;font-size:.7rem;padding:.28rem .65rem;border-radius:4px;}
+
+/* ─── SKILLS ─── */
+#skills{background:var(--navy2);}
+.sk-row{margin-bottom:1.3rem;}
+.sk-info{display:flex;justify-content:space-between;margin-bottom:.4rem;}
+.sk-name{font-size:.84rem;font-weight:600;color:var(--light);}
+.sk-pct{font-size:.76rem;font-weight:700;color:var(--accent);}
+.pb{height:7px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden;}
+.pb-fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:4px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+.tbadge{display:inline-flex;align-items:center;gap:.4rem;background:var(--navy);border:1px solid rgba(100,255,218,.14);border-radius:6px;padding:.4rem .85rem;font-size:.78rem;font-weight:600;color:var(--light);margin:.22rem;transition:border-color .2s,color .2s;}
+.tbadge:hover{border-color:var(--accent);color:var(--accent);}
+.tbadge i{color:var(--accent);}
+.soft-li{display:flex;align-items:center;gap:.75rem;background:var(--navy);border:1px solid rgba(100,255,218,.08);border-radius:8px;padding:.8rem 1rem;margin-bottom:.55rem;font-size:.86rem;color:var(--light);font-weight:500;transition:border-color .2s,transform .2s;}
+.soft-li:hover{border-color:rgba(100,255,218,.22);transform:translateX(4px);}
+.soft-li i{color:var(--accent);font-size:1.05rem;flex-shrink:0;}
+
+/* ─── CERTIFICATIONS ─── */
+#certifications{background:var(--navy);}
+.cc{background:var(--card);border:1px solid rgba(100,255,218,.1);border-radius:10px;padding:1.7rem;height:100%;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;}
+.cc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2));}
+.cc:hover{transform:translateY(-5px);border-color:rgba(100,255,218,.28);box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.ci{width:46px;height:46px;border-radius:9px;background:rgba(100,255,218,.08);border:1px solid rgba(100,255,218,.15);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.3rem;margin-bottom:.9rem;}
+.ct{font-size:.97rem;font-weight:700;color:var(--white);margin-bottom:.25rem;}
+.cis{font-size:.78rem;color:var(--gray);margin-bottom:.9rem;}
+.btn-cv{display:inline-flex;align-items:center;gap:.4rem;background:transparent;border:1px solid var(--accent);color:var(--accent);font-family:var(--font);font-size:.73rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.42rem 1rem;border-radius:4px;cursor:pointer;transition:background .2s;}
+.btn-cv:hover{background:rgba(100,255,218,.1);}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--navy2);}
+.ci-card{background:var(--navy);border:1px solid rgba(100,255,218,.1);border-radius:10px;padding:1.8rem;margin-bottom:1.2rem;}
+.ci-row{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:1.4rem;}
+.ci-icon{width:40px;height:40px;flex-shrink:0;background:rgba(100,255,218,.08);border:1px solid rgba(100,255,218,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;}
+.ci-lbl{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:.12rem;}
+.ci-val{font-size:.88rem;color:var(--light);}
+.soc{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(100,255,218,.15);color:var(--gray);font-size:1rem;text-decoration:none;transition:border-color .2s,color .2s,background .2s;margin-right:.35rem;}
+.soc:hover{border-color:var(--accent);color:var(--accent);background:rgba(100,255,218,.06);}
+.fw{background:var(--navy);border:1px solid rgba(100,255,218,.1);border-radius:12px;padding:2.4rem;}
+.flbl{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);display:block;margin-bottom:.4rem;}
+.fc{width:100%;background:#0d2137;border:1px solid rgba(100,255,218,.12);border-radius:6px;color:var(--white);font-family:var(--font);font-size:.88rem;padding:.75rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+.fc::placeholder{color:#3a5068;}
+.fc:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(100,255,218,.1);}
+.ig{display:flex;}
+.ipfx{background:#0a2032;border:1px solid rgba(100,255,218,.12);border-right:none;border-radius:6px 0 0 6px;padding:0 .85rem;display:flex;align-items:center;color:var(--accent);font-size:.95rem;flex-shrink:0;}
+.ig .fc{border-radius:0 6px 6px 0;}
+.fa-c{display:none;border-radius:6px;padding:.85rem 1rem;margin-bottom:1.2rem;font-size:.86rem;font-weight:500;}
+.fa-c.ok{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);color:#34d399;}
+.fa-c.er{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#fca5a5;}
+.ferr{display:none;color:#f87171;font-size:.74rem;margin-top:.3rem;font-weight:600;}
+
+/* ─── MODAL ─── */
+.modal-content{background:var(--navy2);border:1px solid rgba(100,255,218,.2);border-radius:12px;font-family:var(--font);}
+.modal-header{border-bottom:1px solid rgba(255,255,255,.07);}
+.modal-footer{border-top:1px solid rgba(255,255,255,.07);}
+.modal-t{font-size:1.05rem;font-weight:700;color:var(--white);}
+.mp{background:linear-gradient(135deg,#0a192f,#112240);border:1.5px solid rgba(100,255,218,.18);border-radius:10px;padding:2.8rem 2rem;text-align:center;}
+.btn-close{filter:invert(1);}
+
+/* ─── FOOTER ─── */
+footer{background:#060f1e;border-top:1px solid rgba(100,255,218,.1);padding:1.8rem 0;font-family:var(--font);}
+.fb{font-size:1.1rem;font-weight:800;color:var(--accent);}
+.fc-t{font-size:.76rem;color:var(--gray);}
+
+@media(max-width:767px){
+  section{padding:80px 0 60px;min-height:auto;}
+  .av-img,.av-sh{width:200px;height:250px;}
+  .fw{padding:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="nav-brand" href="#home">Sneha<span>Sirigiripeta</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nv">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nv">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="navlink active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="navlink" href="#about">About</a></li>
+        <li class="nav-item"><a class="navlink" href="#qualifications">Qualifications</a></li>
+        <li class="nav-item dropdown">
+          <a class="navlink dropdown-toggle" href="#" data-bs-toggle="dropdown">Expertise</a>
+          <ul class="dropdown-menu dd-menu">
+            <li><a class="dd-item" href="#skills"><i class="bi bi-bar-chart-fill me-2" style="color:var(--accent)"></i>Skills</a></li>
+            <li><a class="dd-item" href="#certifications"><i class="bi bi-patch-check-fill me-2" style="color:var(--accent)"></i>Certifications</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="navlink" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══ HOME ══ -->
+<section id="home">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+
+  <!-- LEFT CONTENT -->
+  <div class="col-lg-7">
+    <div class="hero-tag">B.Tech IT Student</div>
+
+    <h1 class="hero-h1">Hi, I'm <span class="ac">Sneha Sirigiripeta</span></h1>
+
+    <p class="hero-role">Aspiring Software Developer</p>
+
+    <p class="hero-desc">
+      I'm an Information Technology student passionate about web development, programming, and building real-world projects.
+    </p>
+
+    <div class="d-flex flex-wrap gap-3 mb-4">
+      <a href="#about" class="btn-a"><i class="bi bi-person-fill"></i>About Me</a>
+      <a href="#contact" class="btn-b"><i class="bi bi-envelope"></i>Connect</a>
+    </div>
+
+    <!-- STATS -->
+    <div class="d-flex gap-4 mb-4">
+      <div class="stat-box">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Projects</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Certifications</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n">2028</div>
+        <div class="stat-l">Graduation</div>
+      </div>
+    </div>
+
+    <!-- ALERT -->
+    <div class="alert-c">
+      <i class="bi bi-info-circle-fill"></i>
+      <span>
+        <strong>Available for freelance</strong> —
+        <a href="#contact">Let's talk →</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <div class="col-lg-5 text-center">
+    <div class="av-wrap">
+      <img class="av-img" src="images/image.png" alt="Sneha"/>
+      <div class="av-sh"></div>
+    </div>
+  </div>
+
+</div>
+  </div>
+</div>
+</div>
+
+</section>
+
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="container">
+    <div class="row gy-5 align-items-start">
+      <div class="col-lg-4 text-center text-lg-start">
+        <img class="prof-img mb-4" src="images/image.png" alt="Sneha"/>
+        <div class="ab-card">
+          <div class="ir"><i class="bi bi-envelope-fill"></i>sirigiripetasneha@gmail.com</div>
+          <div class="ir"><i class="bi bi-telephone-fill"></i>+91 9347087020</div>
+          <div class="ir"><i class="bi bi-geo-alt-fill"></i>Hyderabad,Telangana</div>
+          
+          <div class="ir" style="margin-bottom:0"><i class="bi bi-linkedin"></i>https://www.linkedin.com/in/sneha-sirigiripeta-88099a3a6/</div>
+        </div>
+        <a href="#" class="btn-a w-100 justify-content-center mt-3"><i class="bi bi-download"></i>Download CV</a>
+      </div>
+      <div class="col-lg-8">
+        <div class="eyebrow"><i class="bi bi-person me-2"></i>Who I Am</div>
+        <h2 class="sh">A Little <span>About</span> Me</h2>
+        <div class="rule"></div>
+        
+        <p class="sub">I'm a B.Tech Information Technology student with a strong interest in software development and emerging technologies. I enjoy building projects, learning new programming languages, and exploring areas like web development, AI, and cloud computing.
+
+Currently pursuing my degree, I aim to develop practical skills through hands-on experience, internships, and real-world projects.</p>
+        
+        <div class="mb-4">
+          <div class="eyebrow mb-2">Interests</div>
+          <span class="chip"><i class="bi bi-camera me-1"></i>Photography</span>
+          <span class="chip"><i class="bi bi-music-note me-1"></i>Music</span>
+          <span class="chip"><i class="bi bi-book me-1"></i>Reading</span>
+          <span class="chip"><i class="bi bi-bicycle me-1"></i>Cycling</span>
+          <span class="chip"><i class="bi bi-cpu me-1"></i>AI Research</span>
+          <span class="chip"><i class="bi bi-controller me-1"></i>Gaming</span>
+        </div>
+        <div class="accordion-item acc-item-c">
+  <h2 class="accordion-header">
+    <button class="accordion-button acc-btn-c" type="button" data-bs-toggle="collapse" data-bs-target="#e1">
+      <i class="bi bi-code-slash me-2" style="color:var(--accent)"></i>
+      Web Development Intern 
+      <span style="color:var(--gray);font-weight:400;font-size:.82rem;">(2024)</span>
+    </button>
+  </h2>
+  <div id="e1" class="accordion-collapse collapse show">
+    <div class="acc-body-c">
+      Built responsive websites using HTML, CSS, and JavaScript. Worked on real-world projects and improved UI/UX skills.
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item acc-item-c">
+  <h2 class="accordion-header">
+    <button class="accordion-button acc-btn-c collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#e2">
+      <i class="bi bi-laptop me-2" style="color:var(--accent)"></i>
+      Academic Projects
+    </button>
+  </h2>
+  <div id="e2" class="accordion-collapse collapse">
+    <div class="acc-body-c">
+      Developed mini projects like portfolio websites, student management systems, and basic web apps using JavaScript and Python.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ QUALIFICATIONS ══ -->
+<section id="qualifications">
+  <div class="container">
+    <div class="eyebrow"><i class="bi bi-mortarboard me-2"></i>Education</div>
+    <h2 class="sh">Academic <span>Qualifications</span></h2>
+    <div class="rule"></div>
+    <p class="sub">A record of my formal education and academic achievements throughout the years.</p>
+    <div class="table-responsive mb-5">
+      <table class="table qt mb-0">
+        <thead><tr><th>Degree / Course</th><th>Institution</th><th>Board / University</th><th>Year</th><th>Score</th><th>Status</th></tr></thead>
+        <tbody>
+          <td>B.Tech — Information Technology</td>
+<td>Vasavi College of Engineering</td>
+<td>Autonomous</td>
+<td>2024–2028</td>
+<td><span class="ba">8.5</span></td>
+<td><span class="bw">In Progress</span></td>
+          <tr><td>Class XII </td><td>Sri chaithanya</td><td>state syllabus</td><td>2022–2024</td><td><span class="ba">96.4%</span></td><td><span class="bs">Completed</span></td></tr>
+          <tr><td>Class X</td><td>St.Mary's High School</td><td>state syllabus</td><td>2009–2022</td><td><span class="ba">97.2%</span></td><td><span class="bs">Completed</span></td></tr>
+          
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="container">
+    <div class="eyebrow"><i class="bi bi-bar-chart me-2"></i>What I Do</div>
+    <h2 class="sh">My <span>Skills</span></h2>
+    <div class="rule"></div>
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="eyebrow mb-4">Technical Proficiency</div>
+        <div class="sk-row"><div class="sk-info"><span class="sk-name">React / Next.js</span><span class="sk-pct">92%</span></div><div class="pb"><div class="pb-fill" data-w="92%"></div></div></div>
+        <div class="sk-row"><div class="sk-info"><span class="sk-name">Node.js / Express</span><span class="sk-pct">88%</span></div><div class="pb"><div class="pb-fill" data-w="88%"></div></div></div>
+        <div class="sk-row"><div class="sk-info"><span class="sk-name">TypeScript</span><span class="sk-pct">85%</span></div><div class="pb"><div class="pb-fill" data-w="85%"></div></div></div>
+        <div class="sk-row"><div class="sk-info"><span class="sk-name">Python / Django</span><span class="sk-pct">80%</span></div><div class="pb"><div class="pb-fill" data-w="80%"></div></div></div>
+        <div class="sk-row"><div class="sk-info"><span class="sk-name">PostgreSQL / MongoDB</span><span class="sk-pct">78%</span></div><div class="pb"><div class="pb-fill" data-w="78%"></div></div></div>
+        <div class="sk-row"><div class="sk-info"><span class="sk-name">AWS / Docker</span><span class="sk-pct">74%</span></div><div class="pb"><div class="pb-fill" data-w="74%"></div></div></div>
+        <div class="sk-row"><div class="sk-info"><span class="sk-name">UI/UX Design (Figma)</span><span class="sk-pct">75%</span></div><div class="pb"><div class="pb-fill" data-w="75%"></div></div></div>
+      </div>
+      <div class="eyebrow mt-4 mb-3">Tools & Technologies</div>
+
+<span class="tbadge"><i class="bi bi-code-slash"></i>VS Code</span>
+<span class="tbadge"><i class="bi bi-git"></i>Git</span>
+<span class="tbadge"><i class="bi bi-github"></i>GitHub</span>
+<span class="tbadge"><i class="bi bi-bootstrap-fill"></i>Bootstrap</span>
+<span class="tbadge"><i class="bi bi-browser-chrome"></i>Chrome DevTools</span>
+<span class="tbadge"><i class="bi bi-file-earmark-code"></i>HTML</span>
+<span class="tbadge"><i class="bi bi-filetype-js"></i>JavaScript</span>
+<span class="tbadge"><i class="bi bi-filetype-py"></i>Python</span>
+<span class="tbadge"><i class="bi bi-database-fill"></i>MySQL</span>
+<span class="tbadge"><i class="bi bi-palette-fill"></i>Figma</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CERTIFICATIONS ══ -->
+<section id="certifications">
+  <div class="container">
+    <div class="eyebrow"><i class="bi bi-patch-check me-2"></i>Credentials</div>
+    <h2 class="sh">My <span>Certifications</span></h2>
+    <div class="rule"></div>
+    <p class="sub">Industry-recognized credentials validating my expertise across cloud, frontend, AI, and security domains.</p>
+    <div class="row g-4">
+
+  <!-- Cisco Certification -->
+  <div class="col-md-6">
+    <div class="cc">
+      <div class="ci"><i class="bi bi-router-fill"></i></div>
+      <span class="ba" style="display:inline-block;margin-bottom:.6rem;">Networking</span>
+      <div class="ct">Cisco Networking Certification</div>
+      <div class="cis">Cisco · 2024</div>
+      <button class="btn-cv" data-bs-toggle="modal" data-bs-target="#cm"
+        onclick="oc('Cisco Networking Certification','Cisco','2024','Completed certification focused on networking fundamentals, IP addressing, routing, and network security basics.')">
+        <i class="bi bi-eye"></i>View Certificate
+      </button>
+    </div>
+  </div>
+
+  <!-- NPTEL Certification -->
+  <div class="col-md-6">
+    <div class="cc">
+      <div class="ci"><i class="bi bi-journal-code"></i></div>
+      <span class="ba" style="display:inline-block;margin-bottom:.6rem;">Academic</span>
+      <div class="ct">NPTEL Certification</div>
+      <div class="cis">NPTEL · 2024</div>
+      <button class="btn-cv" data-bs-toggle="modal" data-bs-target="#cm"
+        onclick="oc('NPTEL Certification','NPTEL','2024','Successfully completed an NPTEL course gaining strong theoretical and practical knowledge in the subject area.')">
+        <i class="bi bi-eye"></i>View Certificate
+      </button>
+    </div>
+  </div>
+
+</div>
+  </div>
+</section>
+
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="container">
+    <div class="eyebrow"><i class="bi bi-envelope me-2"></i>Get In Touch</div>
+    <h2 class="sh">Let's <span>Connect</span></h2>
+    <div class="rule"></div>
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-4">
+        <p style="color:var(--gray);line-height:1.85;font-size:.93rem;margin-bottom:2rem;">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's build something great together.</p>
+        <div class="ci-card">
+          <div class="ci-row"><div class="ci-icon"><i class="bi bi-envelope-fill"></i></div><div><div class="ci-lbl">Email</div><div class="ci-val">sirigiripetasneha@gmail.com</div></div></div>
+          <div class="ci-row"><div class="ci-icon"><i class="bi bi-telephone-fill"></i></div><div><div class="ci-lbl">Phone</div><div class="ci-val">+91 9347087020</div></div></div>
+          <div class="ci-row"><div class="ci-icon"><i class="bi bi-geo-alt-fill"></i></div><div><div class="ci-lbl">Location</div><div class="ci-val">Hyderabad,Telangana, India</div></div></div>
+          
+        </div>
+        <div class="mt-3">
+          <a href="#" class="soc"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="soc"><i class="bi bi-github"></i></a>
+          <a href="#" class="soc"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="soc"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="fw">
+          <div id="fa" class="fa-c"></div>
+          <div class="row g-4">
+            <div class="col-sm-6">
+              <label class="flbl">First Name *</label>
+              <div class="ig"><div class="ipfx"><i class="bi bi-person"></i></div><input type="text" class="fc" id="fn" placeholder="sneha"/></div>
+              <div class="ferr" id="efn">First name is required.</div>
+            </div>
+            <div class="col-sm-6">
+              <label class="flbl">Last Name *</label>
+              <div class="ig"><div class="ipfx"><i class="bi bi-person"></i></div><input type="text" class="fc" id="ln" placeholder="sirigiripeta"/></div>
+              <div class="ferr" id="eln">Last name is required.</div>
+            </div>
+            <div class="col-sm-6">
+              <label class="flbl">Email Address *</label>
+              <div class="ig"><div class="ipfx"><i class="bi bi-envelope"></i></div><input type="email" class="fc" id="em" placeholder="you@example.com"/></div>
+              <div class="ferr" id="eem">Enter a valid email address.</div>
+            </div>
+            <div class="col-sm-6">
+              <label class="flbl">Mobile Number *</label>
+              <div class="ig"><div class="ipfx"><i class="bi bi-telephone"></i></div><input type="tel" class="fc" id="mb" placeholder="10-digit number" maxlength="10"/></div>
+              <div class="ferr" id="emb">Mobile must be exactly 10 digits.</div>
+            </div>
+            <div class="col-12">
+              <label class="flbl">Subject *</label>
+              <div class="ig"><div class="ipfx"><i class="bi bi-chat-left-text"></i></div><input type="text" class="fc" id="sb" placeholder="Project inquiry / Collaboration…"/></div>
+              <div class="ferr" id="esb">Subject is required.</div>
+            </div>
+            <div class="col-12">
+              <label class="flbl">Message *</label>
+              <textarea class="fc" id="ms" rows="5" style="resize:vertical;" placeholder="Tell me about your project, timeline, and budget…"></textarea>
+              <div class="ferr" id="ems">Message is required.</div>
+            </div>
+            <div class="col-12">
+              <button class="btn-a w-100 justify-content-center" style="font-size:.82rem;padding:1rem;" onclick="sendForm()"><i class="bi bi-send-fill"></i>Send Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center gy-3">
+      <div class="col-md-4"><div class="fb">Alex<span style="color:var(--white);">.dev</span></div><div class="fc-t mt-1">Sneha Sirigiripeta</div></div>
+      <div class="col-md-4 text-md-center"><div class="fc-t">© 2026 Sneha Sirigiripeta. All rights reserved.</div></div>
+      <div class="col-md-4 text-md-end">
+        <a href="#" class="soc"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="soc"><i class="bi bi-github"></i></a>
+        <a href="#" class="soc"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="soc"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══ CERT MODAL ══ -->
+<div class="modal fade" id="cm" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><span class="modal-t" id="mt">Certificate</span><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body p-4">
+        <div class="mp mb-4">
+          <div style="font-size:2.4rem;color:var(--accent);margin-bottom:.7rem;"><i class="bi bi-award-fill"></i></div>
+          <div style="font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:.35rem;">Certificate of Completion</div>
+          <div style="font-size:1.25rem;font-weight:800;color:var(--white);margin-bottom:.3rem;" id="mn"></div>
+          <div style="font-size:.8rem;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:.8rem;" id="mi"></div>
+          <div style="width:36px;height:2px;background:var(--accent);margin:.7rem auto .9rem;"></div>
+          <div style="font-size:.82rem;color:var(--gray);line-height:1.7;" id="md"></div>
+          <div style="margin-top:1rem;font-size:.7rem;color:#3a5068;letter-spacing:.1em;" id="my"></div>
+        </div>
+        <p style="color:var(--gray);font-size:.78rem;text-align:center;margin:0;">Click "Verify" to confirm authenticity on the issuing platform.</p>
+      </div>
+      <div class="modal-footer justify-content-center gap-3">
+        <button class="btn-b py-2 px-4" data-bs-dismiss="modal">Close</button>
+        <button class="btn-a py-2 px-4"><i class="bi bi-box-arrow-up-right"></i>Verify</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+/* Navbar scroll */
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',scrollY>60));
+
+/* Active nav via IntersectionObserver */
+const secs=document.querySelectorAll('section[id]');
+const nls=document.querySelectorAll('.navlink');
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      nls.forEach(l=>l.classList.remove('active'));
+      const t=document.querySelector(`.navlink[href="#${e.target.id}"]`);
+      if(t)t.classList.add('active');
+    }
+  });
+},{threshold:.3,rootMargin:'-60px 0px 0px 0px'}).observe&&secs.forEach(s=>new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){nls.forEach(l=>l.classList.remove('active'));const t=document.querySelector(`.navlink[href="#${e.target.id}"]`);if(t)t.classList.add('active');}});
+},{threshold:.3,rootMargin:'-70px 0px 0px 0px'}).observe(s));
+
+/* Close mobile menu on nav click */
+document.querySelectorAll('.navlink,.dd-item').forEach(l=>l.addEventListener('click',()=>{const m=document.getElementById('nv');if(m.classList.contains('show'))bootstrap.Collapse.getInstance(m)?.hide();}));
+
+/* Progress bars animate on scroll */
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.pb-fill').forEach(b=>{b.style.width=b.dataset.w;});}});
+},{threshold:.2}).observe(document.getElementById('skills'));
+
+/* Cert modal */
+function oc(n,i,y,d){
+  document.getElementById('mt').textContent=n;
+  document.getElementById('mn').textContent=n;
+  document.getElementById('mi').textContent=i;
+  document.getElementById('my').textContent='Issued · '+y;
+  document.getElementById('md').textContent=d;
+}
+
+/* Form validation */
+function sendForm(){
+  const fs=[
+    {el:'fn',er:'efn',t:'text'},
+    {el:'ln',er:'eln',t:'text'},
+    {el:'em',er:'eem',t:'email'},
+    {el:'mb',er:'emb',t:'mobile'},
+    {el:'sb',er:'esb',t:'text'},
+    {el:'ms',er:'ems',t:'text'},
+  ];
+  let ok=true;
+  fs.forEach(f=>{
+    const el=document.getElementById(f.el),er=document.getElementById(f.er),v=el.value.trim();
+    el.style.borderColor='rgba(100,255,218,.12)';er.style.display='none';
+    let fok=!!v;
+    if(fok&&f.t==='email')fok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    if(fok&&f.t==='mobile')fok=/^\d{10}$/.test(v);
+    if(!fok){el.style.borderColor='#f87171';er.style.display='block';ok=false;}
+  });
+  const fa=document.getElementById('fa');
+  fa.className='fa-c';
+  if(ok){
+    fa.classList.add('ok');
+    fa.innerHTML='<i class="bi bi-check-circle-fill me-2"></i><strong>Message sent!</strong> I\'ll get back to you within 24 hours.';
+    fs.forEach(f=>{document.getElementById(f.el).value='';document.getElementById(f.el).style.borderColor='rgba(100,255,218,.12)';});
+  } else {
+    fa.classList.add('er');
+    fa.innerHTML='<i class="bi bi-exclamation-triangle-fill me-2"></i><strong>Please fix the highlighted errors</strong> before submitting.';
+  }
+  fa.style.display='block';
+  fa.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
